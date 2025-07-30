@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar" id="sidebar">
+      <button onclick="toggleSidebar()">☰</button>
+      <nav>
+        <button onclick="document.getElementById('taskInput').focus()">➕ New Task</button>
+        <button onclick="renderTasks()">🕘 Recent Tasks</button>
+      </nav>
+    </div>
+
+    <div class="main">
+      <div class="header">
+        <input type="text" id="searchBox" maxlength="30" placeholder="🔍 Search tasks..." />
+        <button onclick="toggleTheme()">🌓</button>
+      </div>
+
+      <div class="input-row">
+        <input type="text" id="taskInput" maxlength="40" placeholder="Enter new task" />
+        <input type="datetime-local" id="taskTime" />
+        <button onclick="addTask()">Add</button>
+        <button onclick="clearInput()">Cancel</button>
+      </div>
+
+      <div id="taskList"></div>
+    </div>
+  </div>
+
+  <audio id="notifySound" src="notify.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
